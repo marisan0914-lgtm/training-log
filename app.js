@@ -578,8 +578,8 @@
     const ticks = lo === hi ? [lo] : [lo, round((lo + hi) / 2), hi];
     let g = ticks.map(v => `<line x1="${pl}" x2="${W - pr}" y1="${y(v)}" y2="${y(v)}" stroke="#2b2d33"/><text x="${pl - 6}" y="${y(v) + 4}" text-anchor="end" font-size="11" fill="#9ca3af">${fmt(v)}</text>`).join('');
     const path = pts.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p.v).toFixed(1)}`).join(' ');
-    g += `<path d="${path}" fill="none" stroke="#c5f82a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`;
-    g += pts.map((p, i) => `<circle cx="${x(i)}" cy="${y(p.v)}" r="${pts.length > 30 ? 2 : 3.5}" fill="#c5f82a"/>`).join('');
+    g += `<path d="${path}" fill="none" stroke="#b98cff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`;
+    g += pts.map((p, i) => `<circle cx="${x(i)}" cy="${y(p.v)}" r="${pts.length > 30 ? 2 : 3.5}" fill="#b98cff"/>`).join('');
     const last = pts[pts.length - 1];
     g += `<text x="${Math.min(x(pts.length - 1), W - pr)}" y="${y(last.v) - 8}" text-anchor="end" font-size="12" font-weight="700" fill="#f3f4f6">${fmt(last.v)}${unit}</text>`;
     g += `<text x="${pl}" y="${H - 8}" font-size="11" fill="#9ca3af">${md(pts[0].date)}</text>`;

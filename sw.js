@@ -1,6 +1,6 @@
 // Offline support: serve the app shell from cache, refresh the cache in the background.
 // Bump VERSION whenever app files change so phones pick up the new version.
-const VERSION = 'tlog-v1';
+const VERSION = 'tlog-v2';
 const FILES = ['./', 'index.html', 'style.css', 'app.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'];
 

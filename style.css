@@ -7,8 +7,9 @@
   --btn: #2a2d33;
   --text: #f3f4f6;
   --muted: #9ca3af;
-  --acc: #c5f82a;
-  --acc-ink: #0a0a0b;
+  --acc: #7b3fc6;       /* fills: buttons, badges, tags (white text on top) */
+  --acc-ink: #ffffff;
+  --acc-text: #b98cff;  /* purple text / lines on the black background */
   --light: #5cb8ff;
   --warn: #ffb020;
   --danger: #ff5a5a;
@@ -34,7 +35,7 @@ h2 { font-size: 20px; margin: 8px 0 12px; }
 .small { font-size: 13px; }
 
 /* ---------- top header ---------- */
-.brand { font-size: 13px; font-weight: 800; letter-spacing: .18em; color: var(--acc); }
+.brand { font-size: 13px; font-weight: 800; letter-spacing: .18em; color: var(--acc-text); }
 .date { font-size: 22px; font-weight: 800; margin: 2px 0 12px; }
 .editing { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #2a2210; color: var(--warn); border-radius: 12px; padding: 8px 12px; margin-bottom: 12px; font-size: 14px; }
 .editing button { background: var(--btn); color: var(--text); border-radius: 10px; padding: 8px 12px; font-size: 14px; white-space: nowrap; }
@@ -53,13 +54,13 @@ h2 { font-size: 20px; margin: 8px 0 12px; }
 /* ---------- exercise cards ---------- */
 #cards { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; scroll-margin-top: 12px; }
-.card.done { border-color: #4c6a12; }
+.card.done { border-color: #4a2a78; }
 .card-head { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px; text-align: left; min-height: 64px; }
 .badge { flex: 0 0 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--btn); color: var(--muted); font-weight: 800; font-size: 15px; }
 .card.done .badge { background: var(--acc); color: var(--acc-ink); font-size: 20px; }
 .ttl { flex: 1; min-width: 0; }
 .ttl .name { font-size: 18px; font-weight: 800; overflow-wrap: anywhere; }
-.card.done .ttl .name { color: var(--acc); }
+.card.done .ttl .name { color: var(--acc-text); }
 .ttl .sub { font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .chev { flex: 0 0 20px; color: var(--muted); transition: transform .15s; }
 .card.open .chev { transform: rotate(180deg); }
@@ -91,7 +92,7 @@ h2 { font-size: 20px; margin: 8px 0 12px; }
 .stp-c button { height: 48px; border-radius: 12px; background: var(--btn); font-size: 26px; font-weight: 600; line-height: 1; }
 .stp-c button:active { background: #3a3e46; }
 .stp-c input { height: 48px; width: 100%; min-width: 0; text-align: center; font-size: 24px; font-weight: 800; background: var(--field); border: 1px solid var(--line); border-radius: 12px; padding: 0; font-variant-numeric: tabular-nums; }
-.stp-c input:focus { outline: none; border-color: var(--acc); }
+.stp-c input:focus { outline: none; border-color: var(--acc-text); }
 .hint { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .addrow { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 4px; }
 .addrow.two { grid-template-columns: 1fr 1fr; }
@@ -114,12 +115,12 @@ h2 { font-size: 20px; margin: 8px 0 12px; }
 .tag.light { background: var(--light); color: #04121f; }
 .tag.none { background: var(--btn); color: var(--muted); }
 .tag.warn { background: #3a2c0c; color: var(--warn); }
-.back { height: 44px; padding: 0 12px 0 4px; color: var(--acc); font-weight: 700; font-size: 16px; }
+.back { height: 44px; padding: 0 12px 0 4px; color: var(--acc-text); font-weight: 700; font-size: 16px; }
 .block { background: var(--card); border-radius: 14px; padding: 12px 14px; margin-bottom: 8px; }
 .block .bh { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; }
 .block .bh .t { font-weight: 800; font-size: 17px; }
 .block .ln { font-size: 15px; font-variant-numeric: tabular-nums; }
-.linkbtn { color: var(--acc); font-weight: 700; font-size: 14px; padding: 6px 0; }
+.linkbtn { color: var(--acc-text); font-weight: 700; font-size: 14px; padding: 6px 0; }
 .empty { text-align: center; color: var(--muted); padding: 40px 0; }
 
 /* ---------- growth ---------- */
@@ -134,13 +135,13 @@ h2 { font-size: 20px; margin: 8px 0 12px; }
 .gstats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 10px 0; }
 .gstats .stat .v { font-size: 18px; }
 .note { font-size: 13px; color: var(--light); margin: 8px 2px; }
-.up { color: var(--acc); }
+.up { color: var(--acc-text); }
 .down { color: var(--danger); }
 
 /* ---------- menu editor ---------- */
 .mitem { display: flex; align-items: center; gap: 6px; background: var(--card); border-radius: 14px; padding: 6px 6px 6px 0; min-height: 60px; }
 .mitem.hid { opacity: .5; }
-.mitem.dragging { opacity: .9; outline: 2px solid var(--acc); position: relative; z-index: 2; }
+.mitem.dragging { opacity: .9; outline: 2px solid var(--acc-text); position: relative; z-index: 2; }
 .handle { flex: 0 0 40px; height: 48px; display: grid; place-items: center; color: var(--muted); font-size: 22px; touch-action: none; cursor: grab; }
 .mitem .main { flex: 1; min-width: 0; text-align: left; padding: 4px 0; }
 .mitem .t { font-weight: 700; font-size: 16px; overflow-wrap: anywhere; }
@@ -171,7 +172,7 @@ h2 { font-size: 20px; margin: 8px 0 12px; }
 #nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: repeat(4, 1fr); background: rgba(14, 14, 16, .96); border-top: 1px solid var(--line); padding-bottom: var(--safe-b); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 #nav button { height: var(--nav-h); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: var(--muted); font-size: 12px; font-weight: 700; }
 #nav button svg { width: 26px; height: 26px; fill: currentColor; }
-#nav button.on { color: var(--acc); }
+#nav button.on { color: var(--acc-text); }
 #toast { position: fixed; left: 16px; right: 16px; bottom: calc(var(--nav-h) + var(--safe-b) + 12px); z-index: 60; max-width: 528px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #2b2e35; color: var(--text); border-radius: 14px; padding: 12px 14px; font-size: 15px; font-weight: 600; box-shadow: 0 6px 24px rgba(0,0,0,.5); opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity .15s, transform .15s; }
 #toast.show { opacity: 1; transform: none; pointer-events: auto; }
-#toast button { color: var(--acc); font-weight: 800; padding: 6px 4px; white-space: nowrap; }
+#toast button { color: var(--acc-text); font-weight: 800; padding: 6px 4px; white-space: nowrap; }
